@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ title }}</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- MathJax Configuration -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <!-- Google Fonts: JetBrains Mono + Noto Serif/Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <header>
+      <h1>Welcome</h1>
+      <nav>
+        <ul>
+          <!-- Navigation -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/pages/about/">About Me</a></li>
+          <li><a href="/pages/projects/">Projects</a></li>
+          <li><a href="/blog/">Blog</a></li> </ul>
+          </ul>
+      </nav>
+    </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 | Ahmet B. SERCE</p>
+  </footer>
+
+  </body>
+</html>

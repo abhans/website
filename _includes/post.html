@@ -1,0 +1,12 @@
+---
+layout: base.html
+---
+<article>
+  <h2>{{ title }}</h2>
+  <p><em>Published @ {{ page.date | postDate }}</em></p>
+
+  <hr>
+
+  {{ content | safe }}
+
+</article>

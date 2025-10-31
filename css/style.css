@@ -1,0 +1,407 @@
+/* === GOOGLE FONT IMPORTS === */
+/* This is now handled in base.html to be more efficient */
+
+/*
+===============================================================
+ROOT & COLOR PALETTE
+- Based on AnuPpuccin (Catppuccin Mocha)
+===============================================================
+*/
+:root {
+  /* Layout Settings from snippets.css */
+  --file-line-width: 60em;
+  --callout-radius: 12px; /* From theme.css */
+
+  /* Catppuccin Mocha Palette (as RGB values) */
+  --ctp-rosewater: 245, 224, 220;
+  --ctp-flamingo: 242, 205, 205;
+  --ctp-pink: 245, 194, 231;
+  --ctp-mauve: 203, 166, 247;
+  --ctp-red: 243, 139, 168;
+  --ctp-maroon: 235, 160, 172;
+  --ctp-peach: 250, 179, 135;
+  --ctp-yellow: 249, 226, 175;
+  --ctp-green: 166, 227, 161;
+  --ctp-teal: 148, 226, 213;
+  --ctp-sky: 137, 220, 235;
+  --ctp-sapphire: 116, 199, 236;
+  --ctp-blue: 135, 176, 249;
+  --ctp-lavender: 180, 190, 254;
+  --ctp-text: 198, 208, 245;
+  --ctp-subtext1: 179, 188, 223;
+  --ctp-subtext0: 161, 168, 201;
+  --ctp-overlay2: 142, 149, 179;
+  --ctp-overlay1: 123, 129, 157;
+  --ctp-overlay0: 105, 109, 134;
+  --ctp-surface2: 86, 89, 112;
+  --ctp-surface1: 67, 70, 90;
+  --ctp-surface0: 49, 50, 68;
+  --ctp-base: 30, 30, 46;
+  --ctp-mantle: 24, 24, 37;
+  --ctp-crust: 17, 17, 27;
+}
+
+/*
+===============================================================
+GLOBAL STYLES
+===============================================================
+*/
+body {
+  font-family: "JetBrains Mono", monospace;
+  line-height: 1.6;
+  font-size: small;
+  background-color: rgb(var(--ctp-base));
+  color: rgb(var(--ctp-text));
+  margin: 0;
+  padding: 0;
+}
+
+/* Constrain width based on --file-line-width */
+body > header,
+body > main {
+max-width: var(--file-line-width);
+  margin: 1.5rem auto; /* Spacing between panes */
+  padding: 1.5rem 2rem;  /* Internal padding */
+
+  background-color: rgb(var(--ctp-mantle));
+  border: 1px solid rgb(var(--ctp-surface0));
+  border-radius: 10px; /* Rounded corners */
+}
+
+/*
+===============================================================
+TYPOGRAPHY & CONTENT
+- Fonts from Noto Sans & Noto Serif
+- Colors from AnuPpuccin heading settings
+===============================================================
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: "JetBrains Mono", monospace;
+  line-height: 1.3;
+}
+
+/* AnuPpuccin Heading Colors */
+h1 { color: rgb(var(--ctp-blue)); }
+h2 { color: rgb(var(--ctp-peach)); }
+h3 { color: rgb(var(--ctp-green)); }
+h4 { color: rgb(var(--ctp-teal)); }
+h5 { color: rgb(var(--ctp-lavender)); }
+h6 { color: rgb(var(--ctp-mauve)); }
+
+a {
+  color: rgb(var(--ctp-blue));
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgb(var(--ctp-surface0));
+  margin: 2rem auto;
+}
+
+/* Center Images (from snippets.css) */
+img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/*
+===============================================================
+LAYOUT (HEADER, NAV, FOOTER)
+===============================================================
+*/
+body > header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: rgb(var(--ctp-text));
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.625rem 0 0 0;
+  display: flex;
+  gap: 1.25rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(var(--ctp-blue));
+  font-weight: 500;
+}
+
+body > footer {
+  font-size: 0.9rem;
+  color: rgb(var(--ctp-subtext0));
+  text-align: center;
+  padding-bottom: 0.7rem;
+}
+
+/*
+===============================================================
+BLOG & CODE
+===============================================================
+*/
+
+/* Blog post list */
+.postlist {
+  list-style: none;
+  padding: 0;
+}
+.postlist-item {
+  margin-bottom: 1.5rem;
+}
+.postlist-item a {
+  font-size: 1.25rem;
+  color: rgb(var(--ctp-rosewater)); /* Use an accent color */
+}
+.postlist-date {
+  font-style: italic;
+  color: rgb(var(--ctp-subtext1));
+  display: block;
+}
+
+/* Code Blocks */
+pre,
+code {
+  font-family: "JetBrains Mono", monospace;
+  background-color: rgb(var(--ctp-mantle));
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  border: 1px solid rgb(var(--ctp-surface0));
+}
+
+code {
+  padding: 0.125rem 0.25rem;
+}
+
+/* --- PRISM.JS SYNTAX THEME (CATPPUCCIN) --- */
+
+/* Inline code */
+:not(pre) > code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  background-color: rgb(var(--ctp-crust));
+  color: rgb(var(--ctp-text));
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+}
+
+/* Red Bold Inline Code (from snippets.css) */
+:not(pre) > strong code {
+  color: rgb(var(--ctp-red)) !important;
+  font-weight: bold !important;
+}
+
+/* Code Blocks */
+pre[class*="language-"] {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+
+  background-color: rgb(var(--ctp-mantle));
+  border: 1px solid rgb(var(--ctp-surface0));
+  border-radius: 4px;
+}
+
+/* Base text color inside code blocks */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: rgb(var(--ctp-text));
+  text-shadow: none;
+}
+
+/* --- Token Colors --- */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: rgb(var(--ctp-subtext0));
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: rgb(var(--ctp-overlay2));
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: rgb(var(--ctp-peach));
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: rgb(var(--ctp-green));
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: rgb(var(--ctp-sky));
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: rgb(var(--ctp-mauve));
+}
+
+.token.function,
+.token.class-name {
+  color: rgb(var(--ctp-blue));
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: rgb(var(--ctp-yellow));
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/*
+===============================================================
+LATEX / MATHJAX
+===============================================================
+*/
+
+/* Center LaTeX Formulas */
+mjx-container[display="true"] {
+  text-align: center !important;
+}
+
+/*
+===============================================================
+CALLOUTS
+- Colors from theme.css
+- Styles from snippets.css
+===============================================================
+*/
+
+/* Callout Color Definitions */
+.callout {
+  /* Default color */
+  --callout-color: var(--ctp-blue);
+  padding-left: 0.6rem;
+  font-style: italic;
+}
+.callout[data-callout="note"] { --callout-color: var(--ctp-blue); }
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+  --callout-color: var(--ctp-blue);
+}
+.callout[data-callout="info"],
+.callout[data-callout="todo"] {
+  --callout-color: var(--ctp-teal);
+}
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] {
+  --callout-color: var(--ctp-green);
+}
+.callout[data-callout="warning"],
+.callout[data-callout="attention"] {
+  --callout-color: var(--ctp-yellow);
+}
+.callout[data-callout="failure"],
+.callout[data-callout="fail"] {
+  --callout-color: var(--ctp-maroon);
+}
+.callout[data-callout="danger"],
+.callout[data-callout="error"] {
+  --callout-color: var(--ctp-red);
+}
+.callout[data-callout="example"] {
+  --callout-color: var(--ctp-mauve);
+}
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] {
+  --callout-color: var(--ctp-surface2);
+}
+
+/* Sleek Callout Styles (from snippets.css) */
+.callout-content {
+  padding: var(--callout-title-padding) var(--callout-title-padding) var(
+      --callout-title-padding
+    ) calc(var(--callout-title-padding) * .5);
+  border-top: 2px dashed rgba(var(--callout-color), 0.4);
+}
+
+.callout-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.callout-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--callout-title-padding);
+  padding-bottom: .2; /* Remove bottom padding to avoid double padding */
+  font-weight: bold;
+  color: rgb(var(--callout-color));
+}
+
+.callout-title-icon {
+  flex-shrink: 0;
+  width: auto;
+  background-size: contain;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.callout-title-inner {
+  /* flex-grow: var(--anp-callout-fold-position, unset); */
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+
+.callout {
+  --callout-title-padding: var(--size-4-2, 0.6rem); /* Fallback value */
+}
+
+.callout .callout-content strong,
+.callout .callout-content b {
+  color: rgb(var(--callout-color)) !important;
+}
